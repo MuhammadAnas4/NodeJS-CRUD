@@ -1,7 +1,6 @@
 const { student } = require("./student.schema");
 
-module.exports = {
-    addUserValidaion : async (req,res,next) => {
+const addUserValidaion = async (req,res,next) => {
         const value = await student.validate(req.body);
         if(value.error){
             res.json({
@@ -12,4 +11,4 @@ module.exports = {
             next();
         }
     }
-};
+module.exports = addUserValidaion;

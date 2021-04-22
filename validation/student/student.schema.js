@@ -8,6 +8,8 @@ const schema = {
         gender: joi.string().valid("M","F","O").required(),
         email: joi.string().email().required(),
         address: joi.string().max(100).required(),
+        password: joi.string().required(),
     })
 };
+
 module.exports = schema;
